@@ -5,7 +5,10 @@ import sys
 def mapper():
     for line in sys.stdin:
         data = line.strip().split(",")
-        timestamp, city, item, cost = data
+        try:
+        	timestamp, city, item, cost = data
+        except:
+        	continue
         print(city + "," + cost)
 
 if __name__ == "__main__":
